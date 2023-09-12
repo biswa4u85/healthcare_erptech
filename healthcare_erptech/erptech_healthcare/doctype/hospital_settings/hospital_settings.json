@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-09 02:49:21.517179",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "site_name",
+  "site_logo",
+  "primary_color",
+  "header_color",
+  "footer_color",
+  "on_bording"
+ ],
+ "fields": [
+  {
+   "fieldname": "site_name",
+   "fieldtype": "Data",
+   "label": "Site Name"
+  },
+  {
+   "fieldname": "site_logo",
+   "fieldtype": "Attach Image",
+   "label": "Site Logo"
+  },
+  {
+   "fieldname": "primary_color",
+   "fieldtype": "Color",
+   "label": "Primary Color"
+  },
+  {
+   "fieldname": "header_color",
+   "fieldtype": "Color",
+   "label": "Header Color"
+  },
+  {
+   "fieldname": "footer_color",
+   "fieldtype": "Color",
+   "label": "Footer Color"
+  },
+  {
+   "fieldname": "on_bording",
+   "fieldtype": "Table",
+   "label": "On Bording",
+   "options": "On Bording Sliders"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-09-12 14:53:30.963796",
+ "modified_by": "Administrator",
+ "module": "ERPTech Healthcare",
+ "name": "Hospital Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
