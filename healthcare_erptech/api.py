@@ -3,7 +3,7 @@ import frappe
 @frappe.whitelist(allow_guest=True)
 def login(**kwargs):
     try:
-        usr, pwd, cmd = frappe.form_dict.values()
+        usr, pwd, deviceId, cmd = frappe.form_dict.values()
         auth = frappe.auth.LoginManager()
         auth.authenticate(user=usr, pwd=pwd)
         auth.post_login()
@@ -11,10 +11,12 @@ def login(**kwargs):
         'status_code':200,
         'text':frappe.local.response.message,
         'csrf_token':frappe.sessions.get_csrf_token(),
-         'sid': frappe.session.sid
+        'sid': frappe.session.sid
         }
         users = frappe.get_doc('User', frappe.session.user)
         msg['info'] = users
+        if(deviceId):
+            frappe.set_value('User', users.name, 'device_id', deviceId)
         return msg
     except frappe.exceptions.AuthenticationError:
         return {'status_code':401, 'text':frappe.local.response.message}
